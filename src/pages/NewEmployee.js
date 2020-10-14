@@ -44,20 +44,20 @@ class Home extends React.Component{
     handleBtnClick(event) {
         event.preventDefault();
         // development environment
-        let url = 'http://localhost:5050/newemployee'
+        // let url = 'http://localhost:5050/newemployee'
+        // production environment
+        let url = 'https://fredproject.herokuapp.com/newemployee'
         let params = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             phone: this.state.phone,
             salary: this.state.salary
         }
-
         axios.post(url, params).then(response => {
             // console.log(response.data)
             window.location.replace('/home')
         })
     }
-
 
     render() {
         return <div className="container">

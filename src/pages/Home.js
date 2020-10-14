@@ -19,7 +19,9 @@ class Home extends React.Component{
 
     componentWillMount() {
         // Development environment
-        let Url = 'http://127.0.0.1:5050/employees';
+        // let Url = 'http://127.0.0.1:5050/employees';
+        // Production environment
+        let Url = 'https://fredproject.herokuapp.com/employees'
         console.log('I am in componentWillMount function')
         axios.get(Url).then(response => {
             this.setState({
